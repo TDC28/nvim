@@ -4,3 +4,5 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set number")
 vim.g.mapleader = " "
+vim.keymap.set('n', ';', ':', {})
+vim.keymap.set('n', 't', ':NvimTreeToggle<CR>', {})
