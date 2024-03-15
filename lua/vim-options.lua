@@ -7,4 +7,3 @@ vim.g.mapleader = " "
 vim.g.python3_host_prog = "/Users/alexandreboutot/.nvim/.venv/bin/python"
 vim.keymap.set('n', ';', ':', {})
 vim.keymap.set('n', 't', ':NvimTreeToggle<CR>', {})
-vim.keymap.set('n', 'C', '<cmd>lua require("swenv.api").pick_venv()<cr>', {})
