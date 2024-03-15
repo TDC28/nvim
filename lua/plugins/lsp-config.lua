@@ -11,6 +11,10 @@ return {
 		lazy = false,
 		opts = {
 			auto_install = true,
+			ensure_installed = {
+				"lua_ls",
+				"pyright",
+			},
 		},
 	},
 	{

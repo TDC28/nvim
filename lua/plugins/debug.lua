@@ -10,7 +10,7 @@ return {
     local dapui = require("dapui")
 
     require("dapui").setup()
-    require("dap-python").setup('~/.virtualenvs/debugpy/bin/python')
+    require("dap-python").setup('~/.nvim/.venv/bin/python')
 
     dap.listeners.before.attach.dapui_config = function()
       dapui.open()
