@@ -7,7 +7,21 @@ return {
 	},
 
 	config = function()
-		require("nvim-tree").setup({})
+		require("nvim-tree").setup({
+			renderer = {
+				indent_markers = {
+					enable = true,
+				},
+				icons = {
+					glyphs = {
+						folder = {
+							arrow_closed = " ",
+							arrow_open = " ",
+						},
+					},
+				},
+			},
+		})
 		vim.keymap.set("n", "t", ":NvimTreeToggle<CR>", {})
 	end,
 }
