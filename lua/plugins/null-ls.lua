@@ -1,5 +1,5 @@
 return {
-  "nvimtools/none-ls.nvim",
+  "jose-elias-alvarez/null-ls.nvim",
   config = function()
     local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
     local null_ls = require("null-ls")
@@ -7,7 +7,7 @@ return {
       sources = {
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.black,
-        null_ls.builtins.diagnostics.pylint,
+        null_ls.builtins.diagnostics.ruff,
         null_ls.builtins.formatting.prettier,
       },
       on_attach = function(client, bufnr)
@@ -24,7 +24,7 @@ return {
             end,
           })
         end
-      end
+      end,
     })
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
   end,
