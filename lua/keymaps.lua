@@ -1,2 +1,10 @@
 -- Normal mode
 vim.keymap.set("n", ";", ":", {})
+vim.keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", {})
+vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", {})
+vim.keymap.set("n", "t", "<Cmd>NvimTreeToggle<CR>", {})
+vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Get definition" })
+vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "References" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Show code actions" })
+vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format code" })
