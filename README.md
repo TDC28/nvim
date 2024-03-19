@@ -6,13 +6,13 @@ This configuration is maintained for the latest nvim stable release.
 
 # Installation
 
-'''bash
+'''console
 git clone https://github.com/TDC28/nvim.git ~/.config
 '''
 
 # Python pre-requisites
 
-'''bash
+'''console
 mkdir ~/.nvim
 python3 -m venv ~/.nvim/.venv
 source ~/.nvim/.venv/bin/activate
