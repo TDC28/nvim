@@ -16,6 +16,8 @@ return {
         "pyright",
         "jsonls",
         "tsserver",
+        "html",
+        "cssls",
       },
     },
   },
@@ -36,6 +38,12 @@ return {
         capabilities = capabilities,
       })
       lspconfig.tsserver.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.html.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.cssls.setup({
         capabilities = capabilities,
       })
     end,

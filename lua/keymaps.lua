@@ -2,9 +2,9 @@ local keymap = vim.keymap.set
 
 -- Normal mode
 keymap("n", ";", ":", {})
-keymap("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", {})
-keymap("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", {})
-keymap("n", "t", "<Cmd>NvimTreeToggle<CR>", {})
+keymap("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", { desc = "Cycle tabs" })
+keymap("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Cycle tabs reversed" })
+keymap("n", "t", "<Cmd>NvimTreeToggle<CR>", { desc = "Toggle Tree" })
 keymap("n", "K", vim.lsp.buf.hover, {})
 keymap("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Get definition" })
 keymap("n", "<leader>gr", vim.lsp.buf.references, { desc = "References" })
