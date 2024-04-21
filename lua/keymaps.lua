@@ -5,4 +5,8 @@ local telescope = require("telescope.builtin")
 keymap("n", "<leader>fw", telescope.live_grep, {})
 keymap("n", "<leader>ff", telescope.find_files, {})
 
+-- Bufferline
+keymap("n", "<tab>", "<cmd>BufferLineCycleNext<cr>")
+keymap("n", "<S-tab>", "<cmd>BufferLineCyclePrev<cr>")
+
 keymap("n", ";", ":", {})
