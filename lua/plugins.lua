@@ -7,7 +7,7 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 		config = function()
-			require("alpha").setup(require("alpha.themes.dashboard").config)
+			require("configs.alpha_config")
 		end,
 	},
 	-- {
@@ -152,7 +152,7 @@ return {
 	},
 	{
 		"numToStr/Comment.nvim",
-		lazy = false,
+		event = "VeryLazy",
 		config = function()
 			require("Comment").setup()
 		end,
