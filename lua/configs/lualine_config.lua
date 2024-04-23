@@ -73,7 +73,7 @@ ins_left({
 
 ins_left({
 	function()
-		return ""
+		return vim.fn.mode()
 	end,
 	color = function()
 		local mode_color = {
