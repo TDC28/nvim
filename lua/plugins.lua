@@ -1,15 +1,15 @@
 return {
-	{
-		"folke/Noice.nvim",
-		event = "VeryLazy",
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-		config = function()
-			require("noice").setup()
-		end,
-	},
+	-- {
+	-- 	"folke/Noice.nvim",
+	-- 	event = "VeryLazy",
+	-- 	dependencies = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"rcarriga/nvim-notify",
+	-- 	},
+	-- 	config = function()
+	-- 		require("noice").setup()
+	-- 	end,
+	-- },
 	{
 		"L3MON4D3/LuaSnip",
 		event = "VeryLazy",
