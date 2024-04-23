@@ -15,10 +15,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local opts = require("lazy_opts")
+local opts = require("configs.lazy_opts")
 
 vim.loader.enable()
 require("lazy").setup("plugins", opts)
 require("options")
 require("keymaps")
-require("lsp")
+require("configs.lsp_config")
