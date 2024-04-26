@@ -1,6 +1,4 @@
-vim.g.mapleader = " "
-vim.maplocalleader = " "
-
+require("options")
 -- Lazy setup
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -19,6 +17,5 @@ local opts = require("configs.lazy_opts")
 
 vim.loader.enable()
 require("lazy").setup("plugins", opts)
-require("options")
 require("keymaps")
 require("configs.lsp_config")

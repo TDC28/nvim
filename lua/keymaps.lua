@@ -9,4 +9,7 @@ keymap("n", "<leader>ff", telescope.find_files, {})
 keymap("n", "<tab>", "<cmd>BufferLineCycleNext<cr>")
 keymap("n", "<S-tab>", "<cmd>BufferLineCyclePrev<cr>")
 
+-- LSP
+keymap("n", "<leader>rn", vim.lsp.buf.rename, {})
+
 keymap("n", ";", ":", {})
