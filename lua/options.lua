@@ -10,15 +10,16 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_node_provider = 0
 vim.g.loaded_ruby_provider = 0
+vim.g.vimtex_view_method = "skim"
 
 vim.o.background = "dark"
 vim.o.termguicolors = true
 
 vim.opt.signcolumn = "number"
 vim.opt.showmode = false
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 vim.opt.number = true
 vim.opt.breakindent = true
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
