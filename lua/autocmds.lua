@@ -1,12 +1,15 @@
--- Function to move cursor to the first character of the line
-local function move_cursor_to_end()
-  if vim.bo.filetype == 'NvimTree' then
-    vim.cmd('normal! $')
-  end
+local function lock_cursor()
+	if vim.bo.filetype == "NvimTree" then
+		local current_line = vim.fn.getline(".")
+		local first_char_pos = string.find(current_line, "%w")
+
+		if first_char_pos then
+			vim.fn.cursor(0, first_char_pos)
+		end
+	end
 end
 
--- Autocommand to move cursor to the first character on cursor move
 vim.api.nvim_create_autocmd({'CursorMoved', 'BufEnter'}, {
-  pattern = 'NvimTree_*',
-  callback = move_cursor_to_end,
+	pattern = 'NvimTree_*',
+	callback = lock_cursor,
 })
