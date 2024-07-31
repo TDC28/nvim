@@ -9,7 +9,7 @@ local function lock_cursor()
 	end
 end
 
-vim.api.nvim_create_autocmd({'CursorMoved', 'BufEnter'}, {
+vim.api.nvim_create_autocmd({ 'CursorMoved', 'BufEnter' }, {
 	pattern = 'NvimTree_*',
 	callback = lock_cursor,
 })

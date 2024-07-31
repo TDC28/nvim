@@ -1,5 +1,8 @@
 return {
 	{
+		"neovim/nvim-lspconfig",
+	},
+	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = "BufRead",
@@ -7,7 +10,7 @@ return {
 			ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "latex", "python", "css", "cpp" },
 			sync_install = false,
 			highlight = { enable = true },
-			indent = { enable = true },  
+			indent = { enable = true },
 		}
 	},
 
@@ -44,7 +47,7 @@ return {
 	{
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' },
-		config = true,
+		opts = require("config.lualine")
 	},
 
 	{
@@ -187,5 +190,5 @@ return {
 			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
 			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
 		},
-	}
+	},
 }
