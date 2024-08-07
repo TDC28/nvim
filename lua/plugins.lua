@@ -1,6 +1,7 @@
 return {
    {
       "williamboman/mason-lspconfig.nvim",
+      event = "BufRead",
       dependencies = {
          "williamboman/mason.nvim",
          "neovim/nvim-lspconfig",
@@ -16,16 +17,14 @@ return {
          })
       end
    },
+
    {
-      "nvim-treesitter/nvim-treesitter",
+     "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
       event = "BufRead",
-      opts = {
-         ensure_installed = { "lua", "vim", "vimdoc", "javascript", "html", "latex", "python", "css", "cpp" },
-         sync_install = false,
-         highlight = { enable = true },
-         indent = { enable = true },
-      }
+      config = function()
+         require("config.treesitter")
+      end,
    },
 
    {
@@ -57,6 +56,7 @@ return {
       -- use opts = {} for passing setup options
       -- this is equalent to setup({}) function
    },
+
    {
       'akinsho/bufferline.nvim',
       event = "BufRead",
