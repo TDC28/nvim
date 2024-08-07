@@ -1,9 +1,10 @@
 vim.cmd [[colorscheme tokyonight-night]]
 
 vim.opt.autoindent = true
-vim.opt.softtabstop = 1
+vim.opt.softtabstop = 3
 vim.opt.tabstop = 3
 vim.opt.shiftwidth = 3
+vim.opt.expandtab = true
 vim.opt.number = true
 vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
