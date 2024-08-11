@@ -19,7 +19,7 @@ return {
    },
 
    {
-     "nvim-treesitter/nvim-treesitter",
+      "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
       event = "BufRead",
       config = function()

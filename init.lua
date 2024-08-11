@@ -34,6 +34,12 @@ require("lazy").setup({
    checker = { enabled = false },
 })
 
+
 require("options")
 require("keymaps")
 require("autocmds")
+
+vim.cmd([[highlight TelescopeNormal guibg=#181B26]])
+vim.cmd([[highlight TelescopeBorder guibg=#181B26]])
+vim.cmd([[highlight TelescopePromptBorder guibg=#181B26]])
+
