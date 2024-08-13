@@ -1,6 +1,6 @@
 # Neovim Minimalist Configuration
 
-A blazing fast Neovim configuration with no gimmicks. It just works. And looks good.
+My fast and lightweight Neovim configuration for web development and Python.
 
 ## 🚀 Installation
 ```bash
