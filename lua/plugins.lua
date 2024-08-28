@@ -1,11 +1,4 @@
 return {
-	--    {
-	--       "nvim-lualine/lualine.nvim",
-	--       config = function()
-	--          require("config.lualine")
-	--       end
-	--    },
-
 	{
 		"williamboman/mason-lspconfig.nvim",
 		event = "BufRead",
@@ -41,13 +34,8 @@ return {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		config = {
-			view = {
-				float = {
-					enable = true,
-				},
-			},
-		},
+
+		config = true,
 	},
 
 	{
@@ -131,40 +119,9 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
-			"L3MON4D3/LuaSnip",
-			"saadparwaiz1/cmp_luasnip",
 		},
 		config = function()
-			local cmp = require("cmp")
-
-			cmp.setup({
-				snippet = {
-					-- REQUIRED - you must specify a snippet engine
-					expand = function(args)
-						require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-						-- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
-					end,
-				},
-				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
-				},
-				mapping = cmp.mapping.preset.insert({
-					["<TAB>"] = cmp.mapping.select_next_item(),
-					["<S-TAB>"] = cmp.mapping.select_prev_item(),
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-Space>"] = cmp.mapping.complete(),
-					["<C-e>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-				}),
-				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
-					{ name = "luasnip" }, -- For luasnip users.
-				}, {
-					{ name = "buffer" },
-				}),
-			})
+			require("config.cmp")
 		end,
 	},
 
@@ -186,6 +143,9 @@ return {
 				typescriptreact = { "prettierd" },
 				css = { "prettierd" },
 				html = { "prettierd" },
+				python = { "isort", "black" },
+				c = { "clang-format" },
+				cpp = { "clang-format" },
 			},
 		},
 	},
