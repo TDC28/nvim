@@ -13,6 +13,9 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"tsserver",
+					"tailwindcss",
+					"pyright",
+					"clangd",
 				},
 			})
 			require("config.lsp")
@@ -148,5 +151,11 @@ return {
 				cpp = { "clang-format" },
 			},
 		},
+	},
+
+	{
+		"windwp/nvim-ts-autotag",
+		event = "BufReadPre",
+		config = true,
 	},
 }
