@@ -15,6 +15,7 @@ configs.setup({
 		"gitignore",
 		"json",
 		"sql",
+    "latex",
 	},
 	sync_install = false,
 	highlight = { enable = true },
