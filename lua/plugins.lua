@@ -1,9 +1,9 @@
 return {
-  {
-    "lewis6991/gitsigns.nvim",
-    event = "BufRead",
-    config = true,
-  },
+	{
+		"lewis6991/gitsigns.nvim",
+		event = "BufRead",
+		config = true,
+	},
 	-- {
 	-- 	"iamcco/markdown-preview.nvim",
 	-- 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
