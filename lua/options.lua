@@ -1,5 +1,3 @@
--- vim.cmd([[colorscheme tokyonight-night]])
-
 vim.opt.autoindent = true
 vim.opt.softtabstop = 2
 vim.opt.tabstop = 2
