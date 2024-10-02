@@ -72,7 +72,7 @@ return {
 
 	{
 		"nvim-telescope/telescope.nvim",
-		cmd = { "Telescope find_files", "Telescope live_grep" },
+		cmd = "Telescope",
 		tag = "0.1.8",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
