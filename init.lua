@@ -1,8 +1,6 @@
-require("options")
-require("keymaps")
-require("autocmds")
-
 vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46_cache/"
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -35,6 +33,10 @@ require("lazy").setup({
 	-- colorscheme that will be used when installing plugins.
 	install = { colorscheme = { "nvchad" } },
 })
+
+require("options")
+require("keymaps")
+require("autocmds")
 
 for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
 	dofile(vim.g.base46_cache .. v)

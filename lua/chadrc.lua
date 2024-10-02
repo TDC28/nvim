@@ -7,6 +7,13 @@ M.base46 = {
 
 M.colorify = {
 	enabled = true,
+	mode = "virtual", -- fg, bg, virtual
+	virt_text = "󱓻 ",
+	highlight = { hex = true, lspvars = true },
+}
+
+M.cheatsheet = {
+	theme = "simple",
 }
 
 M.ui = {
