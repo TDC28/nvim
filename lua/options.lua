@@ -1,11 +1,11 @@
-vim.cmd([[colorscheme tokyonight-night]])
+-- vim.cmd([[colorscheme tokyonight-night]])
 
 vim.opt.autoindent = true
 vim.opt.softtabstop = 2
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
-vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
 

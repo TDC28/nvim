@@ -1,6 +1,6 @@
 local cmp = require("cmp")
 
-cmp.setup({
+local options = {
 	snippet = {
 		-- REQUIRED - you must specify a snippet engine
 		expand = function(args)
@@ -25,4 +25,7 @@ cmp.setup({
 	}, {
 		{ name = "buffer" },
 	}),
-})
+}
+
+options = vim.tbl_deep_extend("force", options, require("nvchad.cmp"))
+require("cmp").setup(options)

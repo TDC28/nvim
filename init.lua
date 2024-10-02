@@ -1,3 +1,9 @@
+require("options")
+require("keymaps")
+require("autocmds")
+
+vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46_cache/"
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -18,8 +24,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -29,13 +33,9 @@ require("lazy").setup({
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "tokyonight" } },
-	-- automatically check for plugin updates
-	checker = { enabled = false },
+	install = { colorscheme = { "nvchad" } },
 })
 
-require("options")
-require("keymaps")
-require("autocmds")
-require("highlights")
-
+for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
+	dofile(vim.g.base46_cache .. v)
+end

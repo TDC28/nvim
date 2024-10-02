@@ -1,11 +1,19 @@
 return {
 	{
-		"stevearc/oil.nvim",
-		---@module 'oil'
-		---@type oil.SetupOpts
-		opts = {},
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		"nvchad/ui",
+		config = function()
+			require("nvchad")
+		end,
 	},
+
+	{
+		"nvchad/base46",
+		lazy = true,
+		build = function()
+			require("base46").load_all_highlights()
+		end,
+	},
+
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "BufRead",
@@ -53,21 +61,12 @@ return {
 
 	{
 		"nvim-treesitter/nvim-treesitter",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		build = ":TSUpdate",
 		event = "BufRead",
 		config = function()
 			require("config.treesitter")
 		end,
-	},
-
-	{
-		"nvim-tree/nvim-tree.lua",
-		cmd = "NvimTreeToggle",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-
-		config = true,
 	},
 
 	{
@@ -83,13 +82,6 @@ return {
 		config = true,
 		-- use opts = {} for passing setup options
 		-- this is equalent to setup({}) function
-	},
-
-	{
-		"akinsho/bufferline.nvim",
-		event = "BufRead",
-		dependencies = "nvim-tree/nvim-web-devicons",
-		config = true,
 	},
 
 	{
