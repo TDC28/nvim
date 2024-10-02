@@ -72,6 +72,7 @@ return {
 
 	{
 		"nvim-telescope/telescope.nvim",
+		cmd = { "Telescope find_files", "Telescope live_grep" },
 		tag = "0.1.8",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
@@ -137,6 +138,7 @@ return {
 
 	{
 		"stevearc/conform.nvim",
+		lazy = true,
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
