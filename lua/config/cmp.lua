@@ -7,10 +7,10 @@ cmp.setup({
 			vim.snippet.expand(args.body)
 		end,
 	},
-	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
-	},
+	-- window = {
+	-- 	completion = cmp.config.window.bordered(),
+	-- 	documentation = cmp.config.window.bordered(),
+	-- },
 	mapping = cmp.mapping.preset.insert({
 		["<TAB>"] = cmp.mapping.select_next_item(),
 		["<S-TAB>"] = cmp.mapping.select_prev_item(),
