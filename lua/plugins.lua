@@ -1,25 +1,10 @@
 return {
 	{
-		"stevearc/oil.nvim",
-		---@module 'oil'
-		---@type oil.SetupOpts
-		opts = {},
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-	{
 		"lewis6991/gitsigns.nvim",
 		event = "BufRead",
 		config = true,
 	},
-	-- {
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-	-- 	build = "cd app && npm install",
-	-- 	init = function()
-	-- 		vim.g.mkdp_filetypes = { "markdown" }
-	-- 	end,
-	-- 	ft = { "markdown" },
-	-- },
+
 	{
 		"lervag/vimtex",
 		ft = "tex",
@@ -28,6 +13,7 @@ return {
 			vim.g.vimtex_syntax_enabled = 0
 		end,
 	},
+
 	{
 		"williamboman/mason-lspconfig.nvim",
 		event = "BufRead",
@@ -155,13 +141,6 @@ return {
 		config = function()
 			require("config.cmp")
 		end,
-	},
-
-	{
-		"OXY2DEV/helpview.nvim",
-		lazy = false,
-
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
 	},
 
 	{
