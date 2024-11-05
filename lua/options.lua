@@ -1,4 +1,4 @@
-vim.cmd([[colorscheme tokyonight-night]])
+vim.cmd.colorscheme("catppuccin-latte")
 
 vim.opt.autoindent = true
 vim.opt.softtabstop = 2

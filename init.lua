@@ -37,4 +37,3 @@ require("lazy").setup({
 require("options")
 require("keymaps")
 require("autocmds")
-require("highlights")

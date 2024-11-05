@@ -1,5 +1,11 @@
 return {
 	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+	},
+
+	{
 		"lewis6991/gitsigns.nvim",
 		event = "BufRead",
 		config = true,
@@ -52,8 +58,13 @@ return {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-
-		config = true,
+		opts = {
+			view = {
+				float = {
+					enable = true,
+				},
+			},
+		},
 	},
 
 	{
