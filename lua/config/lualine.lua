@@ -5,6 +5,18 @@ local colors = {
 	surface1 = "#bcc0cc",
 }
 
+local theme = {
+	normal = {
+		a = { bg = "#1e66f5", fg = colors.base },
+		b = { bg = "#1e66f5", fg = colors.base },
+		c = { bg = colors.base, fg = "#4c4f69" },
+	},
+	insert = { a = { bg = "#40a02b", fg = colors.base } },
+	visual = { a = { bg = "#8839ef", fg = colors.base } },
+	replace = { a = { bg = "#ffffff", fg = colors.base } },
+	command = { a = { bg = "#fe640b", fg = colors.base } },
+}
+
 local mode = {
 	"mode",
 	separator = { right = "" },
@@ -46,7 +58,7 @@ local branch = {
 
 local diff = {
 	"diff",
-	color = { colors.surface1, fg = "#313244" },
+	color = { bg = colors.text },
 	separator = { left = "", right = "" },
 }
 
@@ -99,6 +111,7 @@ require("lualine").setup({
 		component_separators = "",
 		section_separators = { left = "", right = "" },
 		globalstatus = true,
+		theme = theme,
 	},
 	sections = {
 		lualine_a = { vim_icon, mode },
