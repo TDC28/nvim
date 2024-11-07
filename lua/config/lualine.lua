@@ -15,6 +15,7 @@ local theme = {
 	visual = { a = { bg = "#8839ef", fg = colors.base } },
 	replace = { a = { bg = "#ffffff", fg = colors.base } },
 	command = { a = { bg = "#fe640b", fg = colors.base } },
+	terminal = { a = { bg = "#40a02b", fg = colors.base } },
 }
 
 local mode = {

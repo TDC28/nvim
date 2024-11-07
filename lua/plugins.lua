@@ -7,7 +7,7 @@ return {
 
 	{
 		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons", "kdheepak/tabline.nvim" },
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		after = "catppuccin",
 		config = function()
 			require("config.lualine")
