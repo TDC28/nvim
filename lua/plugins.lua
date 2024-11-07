@@ -6,6 +6,15 @@ return {
 	},
 
 	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons", "kdheepak/tabline.nvim" },
+		after = "catppuccin",
+		config = function()
+			require("config.lualine")
+		end,
+	},
+
+	{
 		"lewis6991/gitsigns.nvim",
 		event = "BufRead",
 		config = true,
@@ -59,9 +68,14 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		opts = {
+			actions = {
+				open_file = {
+					quit_on_open = true,
+				},
+			},
 			view = {
 				float = {
-					enable = true,
+					enable = false,
 				},
 			},
 		},
@@ -86,7 +100,11 @@ return {
 		"akinsho/bufferline.nvim",
 		event = "BufRead",
 		dependencies = "nvim-tree/nvim-web-devicons",
-		config = true,
+		config = function()
+			require("bufferline").setup({
+				highlights = require("catppuccin.groups.integrations.bufferline").get(),
+			})
+		end,
 	},
 
 	{
