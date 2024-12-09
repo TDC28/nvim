@@ -184,6 +184,7 @@ return {
 				python = { "isort", "black" },
 				c = { "clang-format" },
 				cpp = { "clang-format" },
+				tex = { "latexindent" },
 			},
 		},
 	},
