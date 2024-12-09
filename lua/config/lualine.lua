@@ -72,7 +72,7 @@ local encoding = {
 local fileformat = {
 	"fileformat",
 	color = { bg = colors.surface1, fg = "#313244" },
-	separator = { left = "", right = "" },
+	separator = { left = "", right = " " },
 }
 
 local dia = {
