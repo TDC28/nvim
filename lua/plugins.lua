@@ -6,6 +6,13 @@ return {
 	},
 
 	{
+		"echasnovski/mini.surround",
+		event = "BufRead",
+		version = "*",
+		config = true,
+	},
+
+	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		after = "catppuccin",
@@ -40,12 +47,14 @@ return {
 		config = function()
 			require("mason").setup()
 			require("mason-lspconfig").setup({
+				automatic_installation = true,
 				ensure_installed = {
 					"lua_ls",
 					"ts_ls",
 					"tailwindcss",
 					"pyright",
 					"clangd",
+					"arduino_language_server",
 				},
 			})
 			require("config.lsp")
