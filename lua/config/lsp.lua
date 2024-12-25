@@ -14,3 +14,4 @@ lspconfig.pyright.setup({
 lspconfig.clangd.setup({})
 lspconfig.tailwindcss.setup({})
 lspconfig.arduino_language_server.setup({})
+lspconfig.html.setup({})
