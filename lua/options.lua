@@ -1,0 +1,21 @@
+vim.opt.clipboard = "unnamedplus"
+vim.opt.cursorline = true
+vim.opt.expandtab = true
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.shiftwidth = 3
+vim.opt.signcolumn = "yes"
+vim.opt.smartindent = true
+-- vim.opt.smoothscroll = true
+vim.opt.softtabstop = 3
+vim.opt.tabstop = 3
+vim.opt.termguicolors = true
+vim.opt.undofile = true
+vim.opt.undolevels = 10000
+vim.opt.updatetime = 200
+vim.opt.wrap = false
+
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_node_provider = 0
