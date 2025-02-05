@@ -72,6 +72,7 @@ return {
             }),
             sources = cmp.config.sources({
                { name = "nvim_lsp" },
+               { name = "lazydev" },
             }, {
                   { name = "buffer" }
                })
@@ -94,6 +95,12 @@ return {
          --    matching = { disallow_symbol_nonprefix_matching = false }
          -- })
       end,
+   },
+
+   {
+      "folke/lazydev.nvim",
+      ft = "lua",
+      opts = {},
    },
 
    {
@@ -142,12 +149,48 @@ return {
       opts = {}
    },
 
+   -- { "ellisonleao/gruvbox.nvim", lazy=false,
+   --    priority = 1000,
+   --    config = function()
+   --       vim.o.background = "dark"
+   --
+   --       require("gruvbox").setup({
+   --          terminal_colors = true,
+   --          undercurl = true,
+   --          underline = true,
+   --          bold = true,
+   --          italic = {
+   --             strings = true,
+   --             emphasis = true,
+   --             comments = true,
+   --             operators = false,
+   --             folds = true,
+   --          },
+   --          strikethrough = true,
+   --          invert_selection = false,
+   --          invert_signs = false,
+   --          invert_tabline = false,
+   --          invert_intend_guides = false,
+   --          inverse = true, -- invert background for search, diffs, statuslines and errors
+   --          contrast = "hard", -- can be "hard", "soft" or empty string
+   --          palette_overrides = {},
+   --          overrides = {},
+   --          dim_inactive = false,
+   --          transparent_mode = false,
+   --       })
+   --
+   --       vim.cmd("colorscheme gruvbox")
+   --    end
+   -- },
+
    {
       'sainnhe/gruvbox-material',
       lazy = false,
       priority = 1000,
       config = function()
          vim.g.gruvbox_material_enable_italic = true
+         vim.g.gruvbox_material_background = "hard"
+         vim.g.gruvbox_material_foreground = "original"
          vim.cmd.colorscheme('gruvbox-material')
       end
    },
