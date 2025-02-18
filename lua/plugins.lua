@@ -1,5 +1,9 @@
 return {
    {
+      "tpope/vim-fugitive",
+      event = "VeryLazy",
+   },
+   {
       "stevearc/conform.nvim",
       dependencies = { "mason.nvim" },
       event = { "BufWritePre" },
