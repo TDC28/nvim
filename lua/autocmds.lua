@@ -1,5 +1,5 @@
 vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = { "python", "lua", "sh", "json" },
+    pattern = { "*.py", "*.lua", "*.sh", "*.json" },
     callback = function()
         require("conform").format({ async = false, timeout_ms = 3000 })
         vim.cmd("retab")
@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("BufAdd", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "json", "sh", "javascript", "typescript" },
+    pattern = { "*.json", "*.sh", "*.javascript", "*.typescript" },
     callback = function()
         vim.bo.tabstop = 2
         vim.bo.shiftwidth = 2
@@ -27,7 +27,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "python",
+    pattern = "*.py",
     callback = function()
         vim.bo.tabstop = 4
         vim.bo.shiftwidth = 4
