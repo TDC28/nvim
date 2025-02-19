@@ -5,3 +5,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
       vim.cmd("retab")
    end,
 })
+
+vim.api.nvim_create_autocmd({ "BufAdd" }, {
+   callback = function()
+      local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+
+      if #buffers > 1 then
+         vim.opt.showtabline = 2
+      end
+   end,
+})

@@ -45,7 +45,7 @@ return {
 
    {
       "akinsho/bufferline.nvim",
-      event = "VeryLazy",
+      event = "BufAdd",
       keys = {
          { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle Pin" },
          { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
@@ -59,12 +59,23 @@ return {
          { "]B", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },
       },
       opts = {
+         highlights = {
+            fill = {
+               bg = "#161818",
+            },
+            offset_separator = {
+               bg = "#1d2021",
+            },
+         },
          options = {
             offsets = {
-               filetype = "neo-tree",
-               text = "Neo-tree",
-               highlight = "Directory",
-               text_align = "left",
+               {
+                  filetype = "neo-tree",
+                  text = "Files",
+                  highlight = "Directory",
+                  text_align = "left",
+                  separator = true,
+               },
             },
          },
       },
