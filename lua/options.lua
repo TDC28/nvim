@@ -1,7 +1,7 @@
 vim.opt.autowrite = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.confirm = true
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.expandtab = true
 vim.opt.number = true
 vim.opt.relativenumber = true

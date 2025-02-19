@@ -180,7 +180,7 @@ return {
       dependencies = { "williamboman/mason.nvim" },
       config = function()
          require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "pyright" },
+            ensure_installed = { "lua_ls", "pyright", "bashls" },
          })
       end,
    },
@@ -208,57 +208,70 @@ return {
       cmd = "FzfLua",
       dependencies = { "nvim-tree/nvim-web-devicons" },
       keys = {
-         { "<leader>ff", "<CMD>FzfLua files<CR>", desc = "Find files" },
-         { "<leader>fg", "<CMD>FzfLua grep_visual<CR>", desc = "Live grep" },
+         { "<leader>ff", "<cmd>FzfLua files<CR>", desc = "Find files" },
+         { "<leader>fg", "<cmd>FzfLua grep_visual<cr>", desc = "Live grep" },
+         { "<leader>gc", "<cmd>FzfLua git_commits<cr>", desc = "Commits" },
+         { "<leader>:", "<cmd>FzfLua command_history<cr>", desc = "Command history" },
       },
       opts = {},
    },
 
-   -- { "ellisonleao/gruvbox.nvim", lazy=false,
-   --    priority = 1000,
-   --    config = function()
-   --       vim.o.background = "dark"
-   --
-   --       require("gruvbox").setup({
-   --          terminal_colors = true,
-   --          undercurl = true,
-   --          underline = true,
-   --          bold = true,
-   --          italic = {
-   --             strings = true,
-   --             emphasis = true,
-   --             comments = true,
-   --             operators = false,
-   --             folds = true,
-   --          },
-   --          strikethrough = true,
-   --          invert_selection = false,
-   --          invert_signs = false,
-   --          invert_tabline = false,
-   --          invert_intend_guides = false,
-   --          inverse = true, -- invert background for search, diffs, statuslines and errors
-   --          contrast = "hard", -- can be "hard", "soft" or empty string
-   --          palette_overrides = {},
-   --          overrides = {},
-   --          dim_inactive = false,
-   --          transparent_mode = false,
-   --       })
-   --
-   --       vim.cmd("colorscheme gruvbox")
-   --    end
-   -- },
-
    {
-      "sainnhe/gruvbox-material",
+      "ellisonleao/gruvbox.nvim",
       lazy = false,
       priority = 1000,
       config = function()
-         vim.g.gruvbox_material_enable_italic = true
-         vim.g.gruvbox_material_background = "hard"
-         vim.g.gruvbox_material_foreground = "original"
-         vim.cmd.colorscheme("gruvbox-material")
+         vim.o.background = "dark"
+
+         require("gruvbox").setup({
+            terminal_colors = true,
+            undercurl = true,
+            underline = true,
+            bold = true,
+            italic = {
+               strings = true,
+               emphasis = true,
+               comments = true,
+               operators = false,
+               folds = true,
+            },
+            strikethrough = true,
+            invert_selection = false,
+            invert_signs = false,
+            invert_tabline = false,
+            invert_intend_guides = false,
+            inverse = true, -- invert background for search, diffs, statuslines and errors
+            contrast = "hard", -- can be "hard", "soft" or empty string
+            palette_overrides = {},
+            overrides = {
+               SignColumn = { link = "Normal" },
+               GruvboxGreenSign = { bg = "" },
+               GruvboxOrangeSign = { bg = "" },
+               GruvboxPurpleSign = { bg = "" },
+               GruvboxYellowSign = { bg = "" },
+               GruvboxRedSign = { bg = "" },
+               GruvboxBlueSign = { bg = "" },
+               GruvboxAquaSign = { bg = "" },
+            },
+            dim_inactive = false,
+            transparent_mode = false,
+         })
+
+         vim.cmd("colorscheme gruvbox")
       end,
    },
+
+   -- {
+   --    "sainnhe/gruvbox-material",
+   --    lazy = false,
+   --    priority = 1000,
+   --    config = function()
+   --       vim.g.gruvbox_material_enable_italic = true
+   --       vim.g.gruvbox_material_background = "hard"
+   --       vim.g.gruvbox_material_foreground = "original"
+   --       vim.cmd.colorscheme("gruvbox-material")
+   --    end,
+   -- },
 
    {
       "nvim-treesitter/nvim-treesitter",
@@ -271,7 +284,18 @@ return {
          local configs = require("nvim-treesitter.configs")
 
          configs.setup({
-            ensure_installed = { "lua", "luadoc", "python", "vim", "vimdoc" },
+            ensure_installed = {
+               "lua",
+               "luadoc",
+               "python",
+               "vim",
+               "vimdoc",
+               "bash",
+               "html",
+               "css",
+               "javascript",
+               "typescript",
+            },
             sync_install = false,
             highlight = { enable = true },
             indent = { enable = true },
