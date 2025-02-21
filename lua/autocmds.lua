@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("BufAdd", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "*.json", "*.sh", "*.javascript", "*.typescript" },
+    pattern = { "*.json", "*.sh", "*.js", "*.ts", "*.jsx", "*.tsx" },
     callback = function()
         vim.bo.tabstop = 2
         vim.bo.shiftwidth = 2

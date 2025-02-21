@@ -1,5 +1,46 @@
 return {
     {
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = function()
+            local colors = {
+                bg = "#282828",
+                red = "#cc241d",
+                orange = "#d65d0e",
+                blue = "#458588",
+                green = "#b8bb26",
+                yellow = "#fabd2f",
+                bg0_h = "#1d2021",
+                fg = "#ebdbb2",
+            }
+            local theme = {
+                normal = {
+                    a = { bg = colors.bg, fg = colors.fg },
+                    b = { bg = colors.bg0_h, fg = colors.fg },
+                    c = { bg = colors.bg0_h, fg = colors.fg },
+                },
+                insert = { a = { bg = colors.green, fg = colors.bg } },
+                visual = { a = { bg = colors.orange, fg = colors.fg } },
+                replace = { a = { bg = colors.red, fg = colors.fg } },
+                command = { a = { bg = colors.yellow, fg = colors.bg } },
+                terminal = { a = { bg = colors.blue, fg = colors.fg } },
+            }
+            local opts = {
+                options = { globalstatus = true, theme = theme },
+                sections = {
+                    lualine_a = { { "mode", separator = { right = "" } } },
+                    lualine_b = {},
+                    lualine_c = {},
+                    lualine_x = {},
+                    lualine_y = {},
+                    lualine_z = {},
+                },
+            }
+            return opts
+        end,
+    },
+
+    {
         "lewis6991/gitsigns.nvim",
         event = "BufEnter",
         opts = {
@@ -46,7 +87,8 @@ return {
 
     {
         "akinsho/bufferline.nvim",
-        event = "BufAdd",
+        -- event = "BufAdd",
+        event = "VeryLazy",
         keys = {
             { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle Pin" },
             { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
@@ -72,7 +114,7 @@ return {
                 offsets = {
                     {
                         filetype = "neo-tree",
-                        text = "Files",
+                        text = "",
                         highlight = "Directory",
                         text_align = "left",
                         separator = true,
@@ -133,10 +175,6 @@ return {
                         return vim_item
                     end,
                 },
-                -- window = {
-                --    completion = cmp.config.window.bordered(),
-                --    documentation =cmp.config.window.bordered(),
-                -- },
                 mapping = cmp.mapping.preset.insert({
                     ["<TAB>"] = cmp.mapping.select_next_item(),
                     ["<S-TAB>"] = cmp.mapping.select_prev_item(),
@@ -153,23 +191,6 @@ return {
                     { name = "buffer" },
                 }),
             })
-
-            -- cmp.setup.cmdline({ "/", "?" }, {
-            --    mapping = cmp.mapping.preset.cmdline(),
-            --    sources = {
-            --       { name = "buffer" }
-            --    }
-            -- })
-            --
-            -- cmp.setup.cmdline(":", {
-            --    mapping = cmp.mapping.preset.cmdline(),
-            --    sources = cmp.config.sources({
-            --       { name = "path" }
-            --    }, {
-            --          { name = "cmdline" }
-            --       }),
-            --    matching = { disallow_symbol_nonprefix_matching = false }
-            -- })
         end,
     },
 
