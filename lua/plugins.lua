@@ -13,6 +13,7 @@ return {
                 bg0_h = "#1d2021",
                 fg = "#ebdbb2",
             }
+
             local theme = {
                 normal = {
                     a = { bg = colors.bg, fg = colors.fg },
@@ -25,17 +26,84 @@ return {
                 command = { a = { bg = colors.yellow, fg = colors.bg } },
                 terminal = { a = { bg = colors.blue, fg = colors.fg } },
             }
+
+            local mode = {
+                "mode",
+                separator = { right = "" },
+            }
+
+            local space = {
+                color = { bg = colors.bg0_h, fg = colors.bg0_h, gui = "bold" },
+                function()
+                    return " "
+                end,
+            }
+
+            local vim_icon = {
+                function()
+                    return ""
+                end,
+                separator = { left = "", right = "" },
+            }
+
+            local filename = {
+                "filename",
+                color = { fg = colors.fg, gui = "bold" },
+                separator = { left = "", right = "" },
+                padding = 0,
+            }
+
+            local filetype = {
+                "filetype",
+                icon_only = true,
+                colored = true,
+                separator = { right = "" },
+                padding = 0,
+            }
+
+            local branch = {
+                "branch",
+                icon = "",
+                separator = { left = "", right = "" },
+            }
+
+            local diff = {
+                "diff",
+                separator = { left = "", right = "" },
+            }
+
+            local dia = {
+                "diagnostics",
+                color = { bg = colors.bg0_h, fg = colors.fg },
+                separator = { left = "", right = "" },
+            }
+
+            local progress = {
+                function()
+                    return string.format("%d%%%%/%d", vim.fn.line("."), vim.fn.line("$"))
+                end,
+                color = { bg = colors.bg0_h, fg = colors.fg },
+                separator = { left = "", right = "" },
+            }
+
+            local encoding = {
+                "encoding",
+                color = { bg = colors.bg0_h, fg = colors.fg },
+                separator = { left = "", right = "" },
+            }
+
             local opts = {
-                options = { globalstatus = true, theme = theme },
+                options = { globalstatus = true, theme = theme, component_separators = "", section_separators = "" },
                 sections = {
-                    lualine_a = { { "mode", separator = { right = "" } } },
-                    lualine_b = {},
-                    lualine_c = {},
-                    lualine_x = {},
-                    lualine_y = {},
-                    lualine_z = {},
+                    lualine_a = { vim_icon, mode },
+                    lualine_b = { space },
+                    lualine_c = { filetype, filename, space, branch, diff },
+                    lualine_x = { space },
+                    lualine_y = { space },
+                    lualine_z = { dia, encoding, progress },
                 },
             }
+
             return opts
         end,
     },
@@ -108,6 +176,9 @@ return {
                 },
                 offset_separator = {
                     bg = "#1d2021",
+                },
+                buffer_selected = {
+                    italic = false,
                 },
             },
             options = {
@@ -262,11 +333,11 @@ return {
                 underline = true,
                 bold = true,
                 italic = {
-                    strings = true,
-                    emphasis = true,
-                    comments = true,
+                    strings = false,
+                    emphasis = false,
+                    comments = false,
                     operators = false,
-                    folds = true,
+                    folds = false,
                 },
                 strikethrough = true,
                 invert_selection = false,
